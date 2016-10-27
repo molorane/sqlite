@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<!--
+    Licensed to the Apache Software Foundation (ASF) under one
+    or more contributor license agreements.  See the NOTICE file
+    distributed with this work for additional information
+    regarding copyright ownership.  The ASF licenses this file
+    to you under the Apache License, Version 2.0 (the
+    "License"); you may not use this file except in compliance
+    with the License.  You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing,
+    software distributed under the License is distributed on an
+    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+     KIND, either express or implied.  See the License for the
+    specific language governing permissions and limitations
+    under the License.
+-->
+<html>
+    <head>
+        <!--
+        Customize this policy to fit your own app's needs. For more guidance, see:
+            https://github.com/apache/cordova-plugin-whitelist/blob/master/README.md#content-security-policy
+        Some notes:
+            * gap: is required only on iOS (when using UIWebView) and is needed for JS->native communication
+            * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
+            * Disables use of inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
+                * Enable inline JS: add 'unsafe-inline' to default-src
+        -->
+        <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *">
+        <meta name="format-detection" content="telephone=no">
+        <meta name="msapplication-tap-highlight" content="no">
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <link rel="stylesheet" type="text/css" href="css/index.css">
+        <link rel="stylesheet" type="text/css" href="css/jquery.mobile-1.4.5.min.css" />
+
+
+        <style>
+		        body  * {
+		                text-transform: none;
+		        }
+		        .error {
+                    color:red;
+                }
+
+                #all_text span
+				{
+					text-decoration:underline;
+					background-color:yellow;
+				}
+		</style>
+
+        <title>Sesotho Bible</title>
+
+
+        <script type="text/javascript" src="cordova.js"></script>
+        <script type="text/javascript" src="js/jquery.js"></script>
+        <script type="text/javascript" src="js/jquery.mobile-1.4.5.min.js"></script>
+        <script type="text/javascript" src="js/jquery.validate.min.js"></script>
+
+        <script type="text/javascript" src="js/chapters.js"></script>
+
+    </head>
+    <body>
+
+		<!--
+			Home page
+		-->
+
+        <div data-role="page" id="home">
+
+		    <div data-role="header" data-theme="b">
+		      <a href="#about" data-transition="turn" data-transition="pop" data-iconpos="notext" data-role="button" data-icon="info" title="Home">Home</a>
+		      <h1>Buka Ea Khale</h1>
+		    </div>
+
+		    <div data-role="content" role="main">
+			<a href="#libuka" data-transition="slide" class="ui-btn ui-shadow ui-corner-all ui-btn-icon-left ui-icon-bars">Libuka</a>
+			<a href="#search" data-transition="slide"  class="ui-btn ui-shadow ui-corner-all ui-btn-icon-left ui-icon-search">Search</a>
+
+		    </div>
+
+		    <div data-role="footer" data-position="fixed" data-theme="b">
+                    <h1>2016 Sesotho Bible</h1>
+              </div>
+	    </div>
+
+		<!--
+			About page
+		-->
+
+	    <div data-role="page" id="about">
+
+		    <div data-role="header" data-theme="b" data-position="fixed">
+		      <a href="#home" data-transition="flip" data-transition="turn" data-iconpos="notext" data-role="button" data-icon="home" title="Home">Home</a>
+		      <h1>About</h1>
+		    </div>
+
+
+		    <div data-role="main" class="ui-content">
+		    <p>The Sesotho Bible that I fondly call "Buka ea Khale", is an application developed with the sole purpose of serving the spritual needs of all people who can read and understand Sesotho language. The application is free of charge and it is illegal to sell it! This application may not give correct scripture references according to the canon of the scriptures. I believe as we continue finding incorrect scripture references and updating it,finally we shall have a perfect application with correct references. Owing to that, I urge anyone who come across such errors to report them to <a href="mailto:molorane.mothusi@gmail.com">molorane.mothusi@gmail.com</a></p>
+
+		    
+		    <div data-role="collapsible" data-theme="b" data-content-theme="d">
+		    	<h4>Developer</h4>
+		    	<strong>Molorane Mothusi Michael</strong>
+		    	<p>I created the sesotho bible in order to have access to the word of God in my native language. Initially, the bible was intended for an individual use.</p>
+
+		    	<p>However, the initial idea faded into the thin air, as the need and opportunity to serve the wider community became apparent. Now the application is available to everyone free of charge.</p>
+		    </div>
+
+		    <p>Sesotho Bible is now available in all platforms making it easier for people having devices that run operating systems such as ios,android,blackberry10 and windows phone to have access to the word of God. </p>
+		    <div data-demo-html="true">
+				<ul data-role="listview" data-inset="true" data-divider-theme="b">
+					<li data-role="list-divider">Platforms</li>
+					<li data-icon="false"><a href="#"><img src="img/android.png" class="ui-li-icon">Andoid</a></li>
+					<li data-icon="false"><a href="#"><img src="img/apple.png" class="ui-li-icon">Apple</a></li>
+					<li data-icon="false"><a href="#"><img src="img/windows.png" class="ui-li-icon">Windows</a></li>
+					<li data-icon="false"><a href="#"><img src="img/blackberry.png" class="ui-li-icon">Blackberry</a></li>
+				</ul>
+			</div>
+
+			<p>God bless each and every one of you. I hope Buka Ea Khale will help you to have access to riches of Heaven, everywhere, anytime and all the time.</p>
+
+		  </div>
+	    </div>
+
+		<!--
+			bible books page
+		-->
+
+	    <div data-role="page" id="libuka">
+
+		    <div data-role="header" data-theme="b" data-position="fixed">
+		      <a href="#home" data-transition="slide" data-iconpos="notext" data-role="button" data-icon="home" title="Home">Home</a>
+		      <h1>Libuka</h1>
+		    </div>
+
+		    <div data-role="content" role="main">
+				<ul data-theme="a" data-role="listview" data-filter="true" data-inset="true" id="listLibuka">
+				</ul>
+		    </div>
+
+	    </div>
+
+		<!--
+			Chapters page
+		-->
+	    <div data-role="page" id="chapters">
+
+			<div data-role="header" data-theme="b" data-position="fixed">
+				<a href="#" id="cback" data-transition="slide" data-iconpos="notext" data-role="button" data-icon="arrow-l" title="Home">Home</a>
+				<h1>Likhaolo</h1>
+			</div>
+
+			<div data-role="content" role="main">
+				<ul data-theme="a" data-role="listview" data-inset="true" id="chapter">
+				</ul>
+			</div>
+		</div>
+
+
+
+		<!--
+         Read scriptures
+		-->
+
+		<div data-role="page" id="read">
+
+			<div data-role="header" data-theme="b" data-position="fixed">
+				<a href="#" id="previous" data-transition="slide" data-iconpos="notext" data-role="button" data-icon="arrow-l" title="Home">Home</a>
+				<h1>Chapters</h1>
+			</div>
+
+			<div data-role="content" role="main">
+                <div id="s-read">
+                </div>
+            </div>
+		</div>
+
+
+		<!--
+			Search page
+		-->
+
+	    <div data-role="page" id="search">
+
+		    <div data-role="header" data-theme="b">
+		      <a href="#home" data-transition="turn" data-transition="pop" data-iconpos="notext" data-role="button" data-icon="home" title="Home">Home</a>
+		      <h1>Batla</h1>
+		    </div>
+
+		    <div data-role="content" role="main">
+				<form id="form1" name="search">
+				  <fieldset class="ui-field-contain">
+				    <select name="range" id="range" data-native-menu="true">
+                        <option disabled>Option</option>
+				      	<option value="ot">Testament ea Khale</option>
+				      	<option value="nt">Testament e Ncha</option>
+						<option value="gen-deu">Genese-Deuteronoma</option>
+						<option value="josh-jobo">Joshua-Jobo</option>
+                        <option value="lip-sefela">Lipesama-Sefela Sa Salomone</option>
+                        <option value="baprofeta">Esaiah-Malakia</option>
+                        <option value="matt-joh">Mattheu-Johanne</option>
+                        <option value="lik-rev">Acts-Ts'enolo</option>
+				      	<option value="all">Whole Bible</option>
+				    </select>
+				  </fieldset>
+				  <input type="search" name="search_text" id="search_text" placeholder="Search...">
+				  <input type="submit" data-inline="true" value="Submit">
+				</form>
+		    </div>
+	    </div>
+
+
+        <!--
+			Search results page
+		-->
+        <div data-role="page" id="results">
+
+            <div data-role="header" data-theme="b" data-position="fixed">
+                <a href="#" id="sback" data-transition="slide" data-iconpos="notext" data-role="button" data-icon="arrow-l" title="Home">Home</a>
+                <h1>Search results</h1>
+            </div>
+
+            <div data-role="content" role="main">
+				<div id="search-results">
+				</div>
+            </div>
+        </div>
+
+	   <script type="text/javascript" src="js/books.js"></script>
+	   <script type="text/javascript" src="js/goback.js"></script>
+	   <script type="text/javascript" src="js/events.js"></script>
+        <script src="js/form-validation.js"></script>
+	    
+    </body>
+</html>
